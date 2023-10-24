@@ -69,6 +69,19 @@ class SnakeGame:
 				elif event.key == pygame.K_DOWN or event.key == pygame.K_s:
 					self.direction = Direction.DOWN
 
+	def move(self, direction):
+		x = self.head.x
+		y = self.head.y
+
+		if direction == Direction.RIGHT:
+			x += BLOCK_SIZE
+		elif direction == Direction.LEFT:
+			x -= BLOCK_SIZE
+		elif direction == Direction.UP:
+			y -= BLOCK_SIZE
+		elif direction == Direction.DOWN:
+			y += BLOCK_SIZE
+
 
 if __name__ == "__main__":
 	game = SnakeGame()
